@@ -1,0 +1,62 @@
+//grids.less
+
+.grid-two-col,
+.grid-two-col-reverse {
+	width: 100%;
+	text-align: center;
+	div {
+		display: block; 
+		@media @tablet {
+			display: inline-block;
+			vertical-align: middle; 
+			min-height: 280px;
+		}
+		@media @desktop {
+			min-height: 350px;
+		}
+	}
+	img {
+		width: 50%;
+		@media @tablet {
+			width: 90%;
+		}
+		@media @desktop {
+			width: 100%;
+		}
+	}
+	.col-img {
+		@media @tablet {
+			width: 38%;
+		}
+	}
+	.col-txt {
+		@media @tablet {
+			width: 60%;
+			text-align: left;	
+		}
+	}
+	.button {
+		margin: 1.5em auto;
+		@media @tablet {
+			margin: 1.5em 0 0 0;
+		}
+	}
+}
+.grid-two-col {
+	.col-img {
+		@media @tablet {
+			float: right;
+			padding-left: 2%;
+			
+		} 	
+	}	
+}
+.grid-two-col-reverse {
+	.col-img {
+		@media @tablet {
+			float: left;
+			padding-right: 2%;
+			
+		} 
+	}
+}

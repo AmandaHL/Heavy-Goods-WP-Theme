@@ -1,0 +1,66 @@
+//Portfolio feeds
+
+.active, /*added with js in portfolio*/
+.selected,  { 
+	color: @accent;
+}
+.port-filters {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	li {
+		display: inline-block;
+		font-weight: bold;
+		font-size: 90%;
+		line-height: 18px;
+		padding: 0 .3em;
+		vertical-align: middle;
+		width: auto;
+		.active {
+			color: @accent;
+		}
+		a {
+			color: @black;
+			&:hover {
+				color: @accent;
+			}
+		}
+	}	
+}
+.works-feed{
+	clear: both;
+	margin: 0 auto 1em auto;
+	padding:0;
+	text-align: center;
+	h2 {
+			padding-bottom: .5em;
+			text-align: left;
+	}
+	> div {
+		display: inline-block;
+		padding: 0;
+		margin: 1em 1.4%;
+		width: 40%;
+		vertical-align: top;
+		text-align: center;
+		@media @tablet {
+			width: 20%;
+		}
+	}
+	.post-thumb {
+		margin: 0 ;
+		img {
+			border: solid thin @grey-medium;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+		}
+	}
+	.roles {
+		font-size: 80%;
+		line-height: 110%;
+		margin: .5em auto;
+		width: 100%;
+	}
+}

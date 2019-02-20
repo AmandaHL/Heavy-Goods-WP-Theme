@@ -1,0 +1,1185 @@
+/*
+Theme Name: Heavy Goods
+Description: Custom responsive Wordpress theme powered by the HTML5Blank theme
+Version: 1.0
+Tags: responsive, full width
+Author: Amanda Long
+Author URI: https://designformation.co
+*/
+/*
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ CONTENTS /\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\
+ 
+  1. Base
+    - Variables
+    - Mixins
+    - Defaults
+  2. Layout
+  	- Header
+  	- Footer
+  	- Sidebar
+  3. Modules
+   	- Navigation
+   	- Widgets
+  4. State
+  5. Theme
+  	- Pages
+  	- Posts
+  	- Miscellaneous
+  
+*/
+/* ---------------------------------------------------------------------- 1. Base */
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+/*------------------------------------*\
+    LAYOUT
+\*------------------------------------*/
+/**
+ * Credit: https://gist.github.com/juanbrujo/c3d4861627a50c0a4479
+ * @font-face LESS Mixin
+ * use: .font-face(
+ *   @font-family, // name
+ *   @file-path,   // absolute/relative URL to font files
+ *   @font-weight, // light/normal/bold/inherit | 300/400/700
+ *   @font-style   // italic/normal/inherit
+ * )
+ */
+/**
+ * font LESS Mixin
+ * use: .font(
+ *   @font-family, // name
+ *   @file-size,   // any unit/inherit
+ *   @font-weight, // light/normal/bold/inherit | 300/400/700
+ *   @font-style   // italic/normal/inherit
+ * )
+ */
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+/* global box-sizing */
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* html element 62.5% font-size for REM use */
+html {
+  font-size: 62.5%;
+}
+body {
+  font: 300 18px/1.4 'News Cycle', 'Helvetica Neue', Helvetica, sans-serif;
+  background-color: #000;
+  color: #000;
+}
+@media only screen and (min-width: 992px) {
+  body {
+    font-size: 22px;
+  }
+}
+/* clear */
+.clear:before,
+.clear:after {
+  content: ' ';
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+.clear {
+  *zoom: 1;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+a {
+  text-decoration: none;
+}
+a:focus {
+  outline: 0;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+input:focus {
+  outline: 0;
+  border: 1px solid #000;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Passion One', serif;
+}
+/*------------------------------------*\
+	CONTAINERS
+\*------------------------------------*/
+.wrapper {
+  background-color: #fff;
+  padding: 0;
+}
+section,
+footer {
+  width: 100%;
+}
+section > div,
+footer > div,
+section > article {
+  margin: 0 auto;
+  padding: 1em 0;
+  width: 90%;
+  max-width: 1000px;
+}
+@media only screen and (min-width: 768px) {
+  section > div,
+  footer > div,
+  section > article {
+    width: 84%;
+  }
+}
+.front-content {
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .front-content {
+    min-height: 200px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .front-content {
+    min-height: 300px;
+  }
+}
+.front-content::before {
+  border-top: solid thin #bfc0be;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  bottom: 0;
+  transform-origin: left top;
+  z-index: 1;
+}
+.front-content:nth-child(even)::before {
+  transform: skewY(-3deg);
+}
+.front-content:nth-child(odd)::before {
+  transform: skewY(3deg);
+}
+.front-content:nth-child(odd) {
+  margin-bottom: 1em;
+}
+.front-content:nth-child(odd) div {
+  padding-top: 1em;
+}
+@media only screen and (min-width: 768px) {
+  .front-content:nth-child(odd) {
+    margin-bottom: 1em;
+  }
+  .front-content:nth-child(odd) div {
+    padding-top: 2em;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .front-content:nth-child(odd) {
+    margin-bottom: 5em;
+  }
+  .front-content:nth-child(odd) div {
+    padding-top: 2em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .content {
+    margin: 2.5em auto;
+  }
+}
+/*------------------------------------*\
+	TYPOGRAPHY
+\*------------------------------------*/
+h1 {
+  color: #000;
+  font-size: 210% ;
+  line-height: 80%;
+  padding: 0;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 350%;
+    font-weight: 400;
+  }
+}
+h2 {
+  color: #000;
+  font-size: 180%;
+  line-height: 80%;
+  margin: 0;
+  padding: 0.5em 0 0 0;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) {
+  h2 {
+    font-size: 320%;
+    font-weight: 400;
+  }
+}
+h3 {
+  color: #6d6e71;
+  font-size: 180%;
+  line-height: 80%;
+  padding: 0.5em 0 0 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) {
+  h3 {
+    font-size: 275%;
+    font-weight: 400;
+  }
+}
+h4 {
+  color: #03646C;
+  font-size: 150%;
+}
+h5 {
+  /* used in sidebar */
+  font-size: 120%;
+  line-height: 100%;
+  margin: 0.5em 0 0 0;
+}
+@media only screen and (min-width: 992px) {
+  h5 {
+    font-size: 130%;
+  }
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  padding-top: 1em;
+}
+li {
+  color: #03646C;
+  list-style: none;
+  padding: 0 0 1em 0;
+}
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+.button,
+div.wpforms-container-full .wpforms-form input[type=submit],
+div.wpforms-container-full .wpforms-form button[type=submit] {
+  background: #000;
+  color: #fff;
+  display: block;
+  font-family: 'Passion One', serif;
+  font-size: 90%;
+  font-weight: 400;
+  margin: 1.5em 0 0 0;
+  padding: 5px 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 150px;
+  position: relative;
+  z-index: 2;
+}
+/*------------------------------------*\
+    WORDPRESS CORE
+\*------------------------------------*/
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+.alignright {
+  float: right;
+  margin: 1em 0 0 2em;
+  width: 40%;
+}
+.alignleft {
+  float: left;
+  margin: 1em 2em 0 0 ;
+  width: 40%;
+}
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wp-caption {
+  background: #FFF;
+  border: 1px solid #6d6e71;
+  max-width: 96%;
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+/*----------------------\
+	Extras
+\-----------------------*/
+.webkit-img {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .webkit-img {
+    display: block;
+  }
+}
+.normal-img {
+  display: block;
+}
+@media only screen and (min-width: 992px) {
+  .normal-img {
+    display: none;
+  }
+}
+/* ---------------------------------------------------------------------- 2. Layout */
+/*-------------------\
+	Layout: Header
+\---------------------*/
+header {
+  background-image: url('img/top.png');
+  background-repeat: no-repeat;
+  background-position: left -10px;
+  background-size: 100% 98%;
+  clear: both;
+  margin: 0;
+  padding-bottom: 3em;
+  overflow: visible;
+  position: relative;
+  height: 65px;
+}
+@media only screen and (min-width: 992px) {
+  header {
+    height: 100px;
+  }
+}
+/*--Header Content--*/
+.top {
+  width: 100%;
+}
+.top > * {
+  display: inline-block;
+  padding-top: 0.4em;
+  vertical-align: top;
+}
+.logobox {
+  margin: 0.8em 0 0 1.9%;
+  text-align: left;
+  width: 56%;
+}
+@media only screen and (min-width: 992px) {
+  .logobox {
+    margin-top: 1em;
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .logobox {
+    margin-top: 1em;
+    width: 40%;
+  }
+}
+.logobox img {
+  width: 100%;
+  max-width: 175px;
+}
+@media only screen and (min-width: 768px) {
+  .logobox img {
+    max-width: 240px;
+  }
+}
+.navigation {
+  width: 40%;
+  text-align: right;
+}
+@media only screen and (min-width: 992px) {
+  .navigation {
+    width: 58%;
+  }
+}
+/*-- Home Page --*/
+.logobox-home {
+  margin: -4em 0 1em 0;
+  z-index: 20;
+  width: 80%;
+  min-height: 320px;
+}
+@media only screen and (min-width: 992px) {
+  .logobox-home {
+    margin: -3em 54.8% 3em 10%;
+    width: 40%;
+  }
+}
+.logobox-home img {
+  margin: 0;
+  width: 250px;
+  height: auto;
+}
+@media only screen and (min-width: 992px) {
+  .logobox-home img {
+    width: 300px;
+  }
+}
+/*--------------------\
+	Layout: Footer
+\---------------------*/
+footer {
+  color: #000;
+  margin: 0;
+  padding: 2em 0 0 0 ;
+  position: relative;
+  text-align: left;
+}
+@media only screen and (min-width: 480px) {
+  footer {
+    margin: 0;
+  }
+}
+footer ul {
+  padding: 0;
+}
+footer li {
+  display: block;
+  padding: 0.3em 0;
+}
+footer nav a {
+  color: #000;
+}
+footer::before {
+  border-top: solid thin #bfc0be;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  transform-origin: left top;
+  transform: skewY(3deg);
+}
+.footer-content {
+  margin: 0 auto;
+}
+.footer-content > * {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .footer-navigation {
+    width: 40%;
+  }
+}
+.footer-info {
+  padding-left: 0;
+}
+@media only screen and (min-width: 768px) {
+  .footer-info {
+    padding-left: 4.9%;
+    width: 55%;
+  }
+}
+.copyright {
+  background: #000;
+  color: #fff;
+  font-size: 80%;
+  margin-bottom: 0;
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+}
+/*-------------------Layout: Sidebar---------------------*/
+/*--Use Sidebar template--*/
+.use-sidebar {
+  width: 90%;
+}
+@media only screen and (min-width: 768px) {
+  .use-sidebar {
+    width: 84%;
+  }
+}
+.use-sidebar > div {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .use-sidebar > div {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+.left-content {
+  /*margin: 0 auto;
+	width: 100%;*/
+}
+@media only screen and (min-width: 768px) {
+  .left-content {
+    margin-right: 4%;
+    width: 64%;
+  }
+}
+.sidebar {
+  border-left: none;
+  margin: 2em auto 0 auto;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    border-left: solid 1px #6d6e71;
+    margin: 7em 0 0 0;
+    padding: 0 0 0 1em;
+    width: 30%;
+  }
+}
+.widgettitle {
+  display: none;
+}
+.sidebar ul {
+  margin: 0;
+  padding: 0 0 0 10%;
+}
+/* ---------------------------------------------------------------------- 3. Modules */
+header nav li a {
+  color: #000;
+}
+header nav li a:hover {
+  color: #bfc0be;
+}
+@media only screen and (min-width: 992px) {
+  header nav li a {
+    color: #000;
+  }
+  header nav li a:hover {
+    color: #bfc0be;
+  }
+}
+header nav .current_page_item a {
+  color: #03646C;
+}
+@media only screen and (min-width: 992px) {
+  header nav li a {
+    color: #fff;
+  }
+  header nav li a:hover {
+    color: #bfc0be;
+  }
+  header nav .current-menu-item a,
+  header nav .current-menu-ancestor a,
+  header nav .current_page_item a,
+  header nav .current_page_ancestor a {
+    color: #fff;
+  }
+}
+@media only screen and (min-width: 992px) and only screen and (min-width: 992px) {
+  header nav li a {
+    color: #fff;
+  }
+  header nav li a:hover {
+    color: #bfc0be;
+  }
+}
+nav li a {
+  font-size: 18px;
+  font-weight: 700;
+  height: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.mobile_nav {
+  display: block;
+}
+@media only screen and (min-width: 992px) {
+  .mobile_nav {
+    display: none;
+  }
+}
+.desktop_nav {
+  display: none !important;
+}
+@media only screen and (min-width: 992px) {
+  .desktop_nav {
+    display: block !important;
+  }
+}
+/*----------------------\
+mobile nav icons
+\----------------------*/
+.help-nav {
+  margin: 0;
+  position: relative;
+  right: 0;
+  z-index: 20000;
+}
+.help-nav a {
+  color: #000;
+  font-size: 85%;
+}
+.help-nav img {
+  cursor: pointer;
+}
+@media only screen and (min-width: 992px) {
+  .help-nav {
+    display: none;
+  }
+}
+.help-nav > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.nav-icon {
+  float: right;
+  text-align: right;
+}
+/*----------------------\
+header nav menu styles 
+\----------------------*/
+.header-navigation {
+  /* hidden by js for mobile display */
+  background: #fff;
+  border-bottom: solid 8px #000;
+  position: absolute;
+  top: 75px;
+  right: 0;
+  width: 100%;
+  height: auto;
+  z-index: 5000;
+  overflow-y: hidden;
+  padding: 0;
+}
+@media only screen and (min-width: 992px) {
+  .header-navigation {
+    background: none;
+    border: 0;
+    overflow: visible;
+    top: 0.2em;
+    right: 2%;
+    text-align: right;
+    width: 60%;
+  }
+}
+.header-nav {
+  background: #fff;
+  margin: 5px 0 0 0;
+}
+@media only screen and (min-width: 992px) {
+  .header-nav {
+    background: none;
+    clear: both;
+    display: inline-block;
+    height: auto;
+    margin: -10px 0 0 0;
+    width: 100%;
+  }
+}
+.header-nav li {
+  clear: both;
+  border-bottom: solid thin #bfc0be;
+  display: block;
+  line-height: 30px;
+  padding: 0 0 0 1em;
+  position: relative;
+  text-align: left;
+}
+@media only screen and (min-width: 992px) {
+  .header-nav li {
+    border-bottom: none;
+    display: inline-block;
+    overflow: visible;
+    padding: 0 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+}
+.header-nav li:hover {
+  background: none;
+}
+.header-nav li:last-child {
+  border-bottom: none;
+}
+@media only screen and (min-width: 992px) {
+  .header-nav .current_page_ancestor,
+  .header-nav .current_page_item {
+    background: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header-nav .current-menu-ancestor > a,
+  .header-nav .current-menu-item > a,
+  .header-nav .current_page_item > a {
+    border-bottom: solid 2px #6d6e71;
+  }
+}
+.menu-item-67 > a:hover {
+  color: #000;
+}
+@media only screen and (min-width: 768px) {
+  .menu-item-67 > a:hover {
+    color: #fff;
+  }
+}
+.header-nav .sub-menu {
+  display: block;
+  margin: 0;
+  padding: 0 0 0 10px;
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 0;
+  right: 0;
+}
+@media only screen and (min-width: 992px) {
+  .header-nav .sub-menu {
+    background-color: #000;
+    display: none;
+    padding: 0 0 1em 10px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 200px;
+  }
+}
+.header-nav .sub-menu li {
+  border-bottom: none;
+  display: block;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 992px) {
+  .header-nav .sub-menu li {
+    display: block;
+    padding: 0.3em 0 0 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header-nav .sub-menu .current_page_item a {
+    color: #bfc0be;
+    border: none;
+  }
+}
+.header-nav .sub-menu li:first-child {
+  padding-top: 0;
+}
+@media only screen and (min-width: 992px) {
+  .header-nav .sub-menu li:first-child {
+    padding-top: 0.3em;
+  }
+}
+.header-nav .sub-menu li:last-child {
+  padding-bottom: 0;
+}
+/*----------------------\
+footer nav menu styles 
+\----------------------*/
+footer nav li {
+  display: block;
+  line-height: 30px;
+  padding: 0;
+  position: relative;
+  text-align: left;
+}
+footer nav li a {
+  color: #000;
+}
+footer nav li a:hover {
+  color: #6d6e71;
+}
+@media only screen and (min-width: 992px) {
+  footer nav li a {
+    color: #000;
+  }
+  footer nav li a:hover {
+    color: #6d6e71;
+  }
+}
+footer nav a {
+  font-size: 16px;
+}
+footer nav .current_page_item a {
+  color: #03646C;
+}
+@media only screen and (min-width: 992px) {
+  footer nav li {
+    border-bottom: none;
+    padding: 0 10px;
+    text-align: left;
+  }
+  footer nav li a {
+    color: #000;
+  }
+  footer nav li a:hover {
+    color: #6d6e71;
+  }
+  footer nav .current_page_item a {
+    color: #03646C;
+  }
+}
+@media only screen and (min-width: 992px) and only screen and (min-width: 992px) {
+  footer nav li a {
+    color: #000;
+  }
+  footer nav li a:hover {
+    color: #6d6e71;
+  }
+}
+.footer_nav .children {
+  padding-left: 10px;
+}
+.footer_nav .children li:first-child {
+  padding-top: 0;
+}
+@media only screen and (min-width: 992px) {
+  .footer_nav .children li:first-child {
+    padding-top: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .footer_nav .children .current_page_item a {
+    color: #03646C;
+    border: none;
+  }
+}
+.grid-two-col,
+.grid-two-col-reverse {
+  width: 100%;
+  text-align: center;
+}
+.grid-two-col div,
+.grid-two-col-reverse div {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .grid-two-col div,
+  .grid-two-col-reverse div {
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 280px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid-two-col div,
+  .grid-two-col-reverse div {
+    min-height: 350px;
+  }
+}
+.grid-two-col img,
+.grid-two-col-reverse img {
+  width: 50%;
+}
+@media only screen and (min-width: 768px) {
+  .grid-two-col img,
+  .grid-two-col-reverse img {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid-two-col img,
+  .grid-two-col-reverse img {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid-two-col .col-img,
+  .grid-two-col-reverse .col-img {
+    width: 38%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid-two-col .col-txt,
+  .grid-two-col-reverse .col-txt {
+    width: 60%;
+    text-align: left;
+  }
+}
+.grid-two-col .button,
+.grid-two-col-reverse .button {
+  margin: 1.5em auto;
+}
+@media only screen and (min-width: 768px) {
+  .grid-two-col .button,
+  .grid-two-col-reverse .button {
+    margin: 1.5em 0 0 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid-two-col .col-img {
+    float: right;
+    padding-left: 2%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid-two-col-reverse .col-img {
+    float: left;
+    padding-right: 2%;
+  }
+}
+.active,
+.selected {
+  color: #03646C;
+}
+.port-filters {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+.port-filters li {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 90%;
+  line-height: 18px;
+  padding: 0 0.3em;
+  vertical-align: middle;
+  width: auto;
+}
+.port-filters li .active {
+  color: #03646C;
+}
+.port-filters li a {
+  color: #000;
+}
+.port-filters li a:hover {
+  color: #03646C;
+}
+.works-feed {
+  clear: both;
+  margin: 0 auto 1em auto;
+  padding: 0;
+  text-align: center;
+}
+.works-feed h2 {
+  padding-bottom: 0.5em;
+  text-align: left;
+}
+.works-feed > div {
+  display: inline-block;
+  padding: 0;
+  margin: 1em 1.4%;
+  width: 40%;
+  vertical-align: top;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .works-feed > div {
+    width: 20%;
+  }
+}
+.works-feed .post-thumb {
+  margin: 0 ;
+}
+.works-feed .post-thumb img {
+  border: solid thin #6d6e71;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.works-feed .roles {
+  font-size: 80%;
+  line-height: 110%;
+  margin: 0.5em auto;
+  width: 100%;
+}
+/* ---------------------------------------------------------------------- 4. State */
+@media only screen and (min-width: 992px) {
+  .collapsible {
+    display: show;
+  }
+}
+/* ---------------------------------------------------------------------- 5. Theme */
+.service-lead {
+  padding-bottom: 1em;
+}
+@media only screen and (min-width: 768px) {
+  .service-lead {
+    min-height: 220px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .service-lead {
+    min-height: 250px;
+  }
+}
+.portrait {
+  border-left: solid thin #bfc0be;
+  float: right;
+  margin: 0 auto 1em 1em;
+  padding-left: 1em;
+  width: 35%;
+  text-align: center;
+}
+.portrait img {
+  -webkit-border-radius: 50%;
+  width: 80%;
+}
+.portrait p {
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 90%;
+}
+.portrait p span {
+  display: block;
+  font-size: 70%;
+  padding-top: 1em;
+}
+@media only screen and (min-width: 768px) {
+  .portrait {
+    width: 25%;
+  }
+}
+.skills-box {
+  margin: 2em 0;
+}
+/*--parent post details--*/
+.client {
+  margin: 1em auto;
+  width: 90%;
+}
+.client > div {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em 0;
+}
+.client p {
+  font-size: 90%;
+}
+.client .client-logo {
+  padding-right: 1em;
+  width: auto;
+}
+.client .client-logo img {
+  border: solid thin #555;
+  width: 75px;
+  height: 75px;
+}
+.client .description {
+  width: 75%;
+}
+.projects {
+  width: 90%;
+  margin: 0 auto;
+}
+.projects > div {
+  display: inline-block;
+  padding: 1em 1.9%;
+  width: 46%;
+  text-align: center;
+}
+.projects > div p:first-child {
+  /*--style the excerpt--*/
+  background: #333333;
+  background: rgba(51, 51, 51, 0.1);
+  border-bottom: solid thin #999;
+  color: #555;
+  font-family: 'OratorStd', mono;
+  font-size: 80%;
+  line-height: 20px;
+  margin: 0;
+  padding: 3px 0 0 0;
+  width: 100%;
+  max-width: 450px;
+  min-height: 20px;
+  text-align: center;
+}
+.projects > div p:last-child {
+  background: #fff;
+  max-width: 450px;
+  margin: 0;
+  padding: 0;
+}
+.projects > div img {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .projects > div {
+    width: 32%;
+  }
+}
+.center {
+  border: solid thin #bfc0be;
+  width: 98%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.lightbox-content {
+  padding: 1em 1.5em;
+  max-width: 1200px;
+}
+@media only screen and (min-width: 992px) {
+  .lightbox-content p {
+    width: 800px;
+  }
+}
+.lightbox-content .lightbox-images {
+  text-align: center;
+}
+.lightbox-content .work-image {
+  margin: 0 auto;
+}
+.lightbox-content .work-image img {
+  border: solid thin #bfc0be;
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 768px) {
+  .lightbox-content .work-image {
+    display: inline-block;
+    margin: 1em 0.9%;
+    width: 48%;
+    max-width: 500px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .lightbox-content .work-image {
+    width: 500px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

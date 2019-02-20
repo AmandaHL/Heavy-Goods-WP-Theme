@@ -1,0 +1,73 @@
+// variables.less
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+@xs-min: 480px;
+@sm-min: 768px;
+@md-min: 992px;
+@lg-min: 1100px;
+
+@xs-max: (@sm-min - 1);
+@sm-max: (@md-min - 1);
+@md-max: (@lg-min - 1);
+
+@phone: ~"only screen and (min-width: @{xs-min})";
+@tablet: ~"only screen and (min-width: @{sm-min})";
+@desktop: ~"only screen and (min-width: @{md-min})";
+@large: ~"only screen and (min-width: @{lg-min})";
+
+/*------------------------------------*\
+    LAYOUT
+\*------------------------------------*/
+
+@max-width-div:	1400px;
+
+//Typography
+@body-font-stack: 'News Cycle', 'Helvetica Neue', Helvetica, sans-serif;
+@header-font-stack: 'Passion One', serif;
+@button-font: 'Passion One', serif;
+
+// Colors
+@white: #fff;
+@black:#000;
+@accent:#03646C;
+@grey-medium: #6d6e71; 			
+@grey-light: #bfc0be; 		
+
+// Content
+@body-bg-color: @black;
+@body-color: @black;
+@header-bg-color: @black;
+@wrapper-bg-color: @white;
+@sidebar-bg-color: ;
+@footer-color: @black;
+@footer-bg-color: @black;
+
+// Subheads
+@h1-color: @black;
+@h2-color: @black;
+@h3-color: @grey-medium;
+@h4-color: @accent;
+@h5-color: @black;
+
+// Links 
+@link-color: @accent;
+@link-color-visited: @accent;
+@link-color-hover: @grey-medium;
+
+// Navigation
+@mob-nav-bg-color: @white;
+@mob-nav-color: @black;
+@menu-items-bg-color-mob: @white;
+@menu-items-color-hover-mob: @grey-light;
+@menu-items-color-active-mob: @accent;
+
+@menu-items-color: @white;
+@menu-items-color-hover: @grey-light;
+@menu-items-color-active: @white;
+
+@footer-nav-color: @black;
+@menu-items-color-hover-footer:@grey-medium;
+@menu-items-color-active-footer: @accent;
+ 

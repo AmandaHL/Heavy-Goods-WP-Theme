@@ -1,0 +1,250 @@
+//navigation.less
+
+header nav {
+    li {
+        .links(@mob-nav-color, @menu-items-color-hover-mob);
+    }
+    .current_page_item
+    {
+   	a {
+        color: @menu-items-color-active-mob;
+    }
+	}
+	@media @desktop {
+		li {
+			.links(@menu-items-color, @menu-items-color-hover-mob);
+		}
+		.current-menu-item,
+		.current-menu-ancestor,
+		.current_page_item,
+		.current_page_ancestor {
+		a {
+			color: @menu-items-color-active;
+		}
+		}
+	}
+}
+nav li a {
+	font-size: 18px;
+	font-weight: 700;
+	height: 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.mobile_nav {
+	display: block;
+	@media @desktop {
+		display: none;
+		}
+}
+.desktop_nav {
+	display: none !important;
+	@media @desktop {
+		display: block !important;
+		}
+}
+
+/*----------------------\
+mobile nav icons
+\----------------------*/
+.help-nav {
+	margin: 0;
+	position: relative;
+	right: 0;
+	z-index: 20000;
+	a {
+		color: @mob-nav-color;
+		font-size: 85%;
+	}
+	img {
+		cursor: pointer;
+	}
+	@media @desktop {
+		display: none;
+	}
+}
+.help-nav > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+.nav-icon {
+	float: right;
+	text-align: right;
+}
+/*----------------------\
+header nav menu styles 
+\----------------------*/
+.header-navigation { /* hidden by js for mobile display */
+	background: @white;
+	border-bottom: solid 8px @black;
+	position: absolute;
+	top: 75px;
+	right: 0;
+	width: 100%;
+	height: auto;
+	z-index: 5000;
+	overflow-y: hidden;
+	padding: 0;
+	@media @desktop {
+		background: none;
+		border: 0;
+		overflow: visible;
+		top: .2em;
+		right: 2%;
+		text-align: right;
+		width: 60%;
+	}
+}
+
+.header-nav {
+	background: @white;
+	margin: 5px 0 0 0;
+	@media @desktop {
+		background: none;
+		clear: both;
+		display: inline-block;
+		height: auto;
+		margin: -10px 0 0 0;
+		width: 100%;
+		}
+		li {
+			clear: both;
+			border-bottom: solid thin @grey-light;
+			display: block;
+			line-height: 30px;
+			padding: 0 0 0 1em;
+			position: relative;
+			text-align: left;
+			@media @desktop {
+				border-bottom: none;
+				display: inline-block;
+				overflow: visible;
+				padding: 0 10px;
+				text-align: left;
+				vertical-align: top;
+			}
+		}
+		li:hover {
+			background: none;
+		}
+		li:last-child {
+			border-bottom: none;
+		}
+		.current_page_ancestor,
+		.current_page_item {
+			@media @desktop {
+				background: none;
+			}
+		}
+		.current-menu-ancestor > a,
+		.current-menu-item > a,
+		.current_page_item > a{
+			@media @desktop {
+				border-bottom: solid 2px @grey-medium;	
+			}
+		}
+}
+
+//submenus
+.menu-item-67 > a:hover {
+	color: @black;
+	@media @tablet {
+		color: @white;
+	}
+}
+.header-nav .sub-menu {
+	display: block;
+	margin: 0;
+	padding: 0 0 0 10px;
+	position: relative;
+	width: 100%;
+	height: auto;
+	top: 0;
+	right: 0;
+	@media @desktop {
+		background-color: @black;
+		display: none;
+		padding: 0 0 1em 10px;
+		position: absolute;
+		top: 30px;
+		left: 0;
+		width: 200px;
+	}
+	li{
+		border-bottom: none;
+		display: block;
+		height: 30px;
+		margin: 0;
+		padding: 0;
+		@media @desktop {
+			display: block;
+			padding: .3em 0 0 0;
+		}
+	}
+	.current_page_item a {
+		@media @desktop {
+			color: @grey-light;
+			border: none;
+		}
+	}
+	li:first-child {
+		padding-top: 0;
+		@media @desktop {
+			padding-top: .3em;
+		}
+	}
+	li:last-child {
+		padding-bottom: 0;
+	}
+}
+
+/*----------------------\
+footer nav menu styles 
+\----------------------*/
+footer nav {
+    li {	
+    	display: block;
+    	line-height: 30px;
+		padding:  0;
+		position: relative;
+		text-align: left;
+        .links(@footer-nav-color, @menu-items-color-hover-footer); 
+    }
+	a {
+		font-size: 16px;
+	}
+    .current_page_item {
+		a {
+			color: @menu-items-color-active-footer;
+		}
+	}
+	@media @desktop {
+		li {
+			border-bottom: none;
+			padding: 0 10px;
+			text-align: left;
+			.links(@footer-nav-color, @menu-items-color-hover-footer);
+		}
+		.current_page_item {
+			a {
+				color: @menu-items-color-active-footer;
+			}
+		}
+	}
+}
+
+.footer_nav .children {
+	padding-left: 10px;
+	li:first-child {
+		padding-top: 0;
+		@media @desktop {
+			padding-top: 0;
+		}
+	}
+	.current_page_item a {
+		@media @desktop {
+			color: @menu-items-color-active-footer;
+			border: none;
+		}
+	}
+}

@@ -1,0 +1,108 @@
+//Work Posts
+/*--parent post details--*/
+.client {
+	margin: 1em auto;
+	width: 90%;
+	> div {
+		display: inline-block;
+		vertical-align: top;
+		padding: 1em 0;
+	}
+	p {
+		font-size: 90%;
+		
+	}
+	.client-logo {
+		padding-right: 1em;
+		width: auto;
+		img {
+			border: solid thin #555;
+			width: 75px;
+			height: 75px;
+		}
+	}
+	.description {
+		
+		width: 75%;
+	}
+}
+.projects {
+	width: 90%;
+	margin: 0 auto;
+	> div {
+		display: inline-block;
+		padding: 1em 1.9%;
+		width: 46%;
+		text-align: center;
+		p:first-child { /*--style the excerpt--*/
+			background: rgb(51,51,51);
+			background: rgba(51,51,51,.1);
+			border-bottom: solid thin #999;
+			color: #555;
+			font-family: 'OratorStd', mono;
+			font-size: 80%;
+			line-height: 20px;
+			margin: 0;
+			padding: 3px 0 0 0;
+			width: 100%;
+			max-width: 450px;
+			min-height: 20px;
+			text-align: center;
+		}
+		p:last-child {
+			background: #fff;
+			max-width: 450px;
+			margin: 0;
+			padding: 0;
+		}
+		img {
+			width: 100%;
+			max-width: 450px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		@media @tablet {
+			width: 32%;
+		}
+	}
+}
+.center {
+	border: solid thin @grey-light;
+	width: 98%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+//Lightbox - Work child posts
+.fancybox-inline {
+	
+}
+.lightbox-content {
+	padding: 1em 1.5em;
+	max-width: 1200px;
+	p {
+		@media @desktop {
+			width: 800px;
+		}
+	}
+	.lightbox-images {
+		text-align: center;
+	}
+	.work-image {
+		margin: 0 auto;
+		img {
+			border: solid thin @grey-light;
+			width: 100%;
+			height: auto;	
+		}
+		@media @tablet {
+			display: inline-block;
+			margin: 1em .9%; 
+			width: 48%;
+			max-width: 500px;	
+		}
+		@media @desktop {
+			width: 500px;	
+		}
+	}
+}

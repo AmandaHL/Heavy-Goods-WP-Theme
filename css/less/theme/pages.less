@@ -1,0 +1,39 @@
+//pages.less
+.service-lead  {
+padding-bottom: 1em;
+	@media @tablet {
+		min-height: 220px;
+	}
+	@media @desktop {
+		min-height: 250px;
+	}
+}
+//About page
+.portrait {
+	border-left: solid thin @grey-light;
+	float: right;
+ 	margin: 0 auto 1em 1em;
+ 	padding-left: 1em;
+ 	width: 35%;
+ 	text-align: center;
+ 	img {
+		-webkit-border-radius:50%;
+		width: 80%;
+	}
+	p {
+		font-size: 100%;
+		font-weight: 700;
+		line-height: 90%;	
+		span {
+			display: block;
+			font-size: 70%;
+			padding-top: 1em;
+		}
+	}
+ 	@media @tablet {	
+ 		width: 25%;	
+ 	}
+}
+.skills-box {
+	margin: 2em 0;
+}
