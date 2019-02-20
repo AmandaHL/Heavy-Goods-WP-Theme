@@ -1,6 +1,6 @@
 # [Heavy Goods Wordpress Theme](https://mcocp.org)
 
-* Project: [MCOCP Wordpress Theme](https://github.com/AmandaHL/MCOCP-WP-Theme)
+* Project: [Heavy Goods Wordpress Theme](https://github.com/AmandaHL/Heavy-Goods-WP-Theme)
 * Website: [https://designformation.co](https://designformation.co)
 * Author : [Amanda Long](https://designformation.co)
 
