@@ -10,9 +10,10 @@
 * Website: html5blank.com
 * Twitter: @html5blank
 * Author : Todd Motto // @toddmotto
-* Theme Features
 
-# Responsive CSS / LESS
+# Theme Features
+
+* Responsive CSS / LESS
 * Custom Metaboxes using CMB2 (https://cmb2.io) // (https://github.com/CMB2/)
 * Custom Post Types
 
