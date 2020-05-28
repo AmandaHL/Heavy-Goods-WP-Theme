@@ -4,13 +4,6 @@
 * Website: https://designformation.co
 * Author : Amanda Long
 
-# Created using the HTML5 Blank shell theme.
-
-* Project: github.com/toddmotto/html5blank
-* Website: html5blank.com
-* Twitter: @html5blank
-* Author : Todd Motto // @toddmotto
-
 # Theme Features
 
 * Responsive CSS / LESS
@@ -21,3 +14,11 @@
 
 * Easy Fancybox (https://wordpress.org/plugins/easy-fancybox/)
 * WP Forms Lite (https://wordpress.org/plugins/wpforms-lite/)
+
+# Created using the HTML5 Blank shell theme.
+
+* Project: github.com/toddmotto/html5blank
+* Website: html5blank.com
+* Twitter: @html5blank
+* Author : Todd Motto // @toddmotto
+
